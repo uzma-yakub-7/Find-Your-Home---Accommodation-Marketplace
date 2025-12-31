@@ -6,7 +6,7 @@
 
 ### **1.1 Purpose**
 
-This document defines the software requirements for **Find Your Home**, a full‑stack rental accommodation platform tailored for Bangladesh. It describes functional and non‑functional requirements, system features, and workflows aligned with the *Airbnb‑style web app development* shown in the referenced tutorial playlist.([YouTube][1])
+The purpose of this document is to define the software requirements for Find Your Home, a rental accommodation platform designed to help people easily find rental homes in major cities of Bangladesh, starting with Sylhet and Dhaka. This SRS describes the system’s functionality, scope, constraints, and overall workflow to guide development and evaluation.
 
 ### **1.2 Problem Statement**
 
@@ -17,8 +17,7 @@ People moving to cities like Sylhet and Dhaka struggle to find trusted rental ho
 * Dependency on brokers
 * Time‑intensive physical searching
 
-Existing solutions lack localization for Bangladesh. Foreign apps (like Airbnb) don’t cater to local rental culture.
-
+Existing solutions lack localization for Bangladesh. 
 ### **1.3 Proposed Solution**
 
 **Find Your Home** is an online rental marketplace connecting:
@@ -26,7 +25,7 @@ Existing solutions lack localization for Bangladesh. Foreign apps (like Airbnb) 
 * **Renters/Tenants**
 * **House Owners/Landlords**
 
-The system enables property searching, detailed viewing, authentication, booking, and interaction — similar to an Airbnb clone built in tutorials.([YouTube][1])
+The system enables property searching, detailed viewing, authentication, booking, and interaction. 
 
 ## **2. Scope of the Project**
 
@@ -58,7 +57,7 @@ Find Your Home is a web marketplace with roles:
 2. **House Owner**
 3. **Admin**
 
-The app allows authenticated users to create accounts, list properties, search with filters, and manage bookings — following a full‑stack architecture similar to Airbnb clone tutorials.([YouTube][1])
+The app allows authenticated users to create accounts, list properties, search with filters, and manage bookings. 
 
 ## **4. Functional Requirements**
 
@@ -143,7 +142,6 @@ The app allows authenticated users to create accounts, list properties, search w
 
 * JWT / OAuth (optional Google Auth)
 
-(This stack reflects common tech used in Airbnb‑style clones seen on GitHub and tutorials.)([GitHub][2])
 
 ## **7. Dataset Description**
 
