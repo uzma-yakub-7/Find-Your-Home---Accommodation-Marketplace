@@ -194,7 +194,7 @@ Data can be *seeded manually for development / demo purposes*.
 
 Find Your Home is a web application to modernize the rental search process in Bangladesh, with core features inspired by full‑stack Airbnb clone tutorials. It delivers authenticated user workflows for tenants and owners, scalable design, and usable interfaces for property browsing and bookings — preparing it for future enhancements like mobile apps and smart recommendations.
 
-## **12. Reference **
+## **12. Reference**
 
 YouTube Playlist: https://www.youtube.com/playlist?list=PLnE5DGXxG1AqX7BdIt_3_9RVXdDiMTAGl
 GitHub Source Code: https://github.com/PardeepBhasin/airbnb-clone
