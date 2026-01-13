@@ -1,14 +1,6 @@
 # Software Requirements Specifications (SRS)
 # Find Your Home – Accommodation Marketplace
 
-![Project Status](https://img.shields.io/badge/status-Planning-yellow)
-![React](https://img.shields.io/badge/React-17.0.2-blue)
-![Node.js](https://img.shields.io/badge/Node.js-18.16.0-green)
-![Express.js](https://img.shields.io/badge/Express.js-4.18.2-lightgrey)
-![MongoDB](https://img.shields.io/badge/MongoDB-6.0.7-brightgreen)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-
-
 ## 1. Introduction
 
 ### 1.1 Purpose
