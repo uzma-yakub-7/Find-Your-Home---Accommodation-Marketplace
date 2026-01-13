@@ -1,5 +1,5 @@
 # Software Requirement Specifications (SRS)
-Find Your Home – Accommodation Marketplace for Tenants
+### Find Your Home – Accommodation Marketplace for Tenants
 
 ## 1. Introduction
 
