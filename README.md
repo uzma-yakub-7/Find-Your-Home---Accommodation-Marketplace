@@ -191,7 +191,7 @@ The website owner generates revenue by monetizing the marketplace connecting **h
 - Expansion to 10 cities → potential revenue = BDT 5,000,000/month  
 - Additional revenue from featured listings & ads = BDT 200,000–500,000/month  
 
-## 11. Conclusion
+## 12. Conclusion
 **Find Your Home** is a web application to modernize the rental search process in Bangladesh, with core features inspired by full‑stack Airbnb clone tutorials. It delivers authenticated workflows for tenants and owners, scalable design, and usable interfaces — preparing it for future enhancements like mobile apps and AI-based recommendations.
 
 ## 13. References
