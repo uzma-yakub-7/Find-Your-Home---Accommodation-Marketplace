@@ -1,141 +1,215 @@
-Software Requirement Specification (SRS)
-Project Title: Find Your Home – Accommodation Marketplace for Tenants
-1. Introduction
-1.1 Purpose
-The purpose of this document is to define the software requirements for Find Your Home, a rental accommodation platform designed to help people easily find rental homes in major cities of Bangladesh, starting with Sylhet and Dhaka. This SRS describes the system’s functionality, scope, constraints, workflow, and revenue model to guide development, evaluation, and business planning.
-1.2 Problem Statement
-People moving to cities like Sylhet and Dhaka struggle to find trusted rental housing options. Key issues include:
-Difficulty finding available rentals
-Lack of verified information
-Dependency on brokers
-Time‑intensive physical searching
-Existing solutions lack localization for Bangladesh
-1.3 Proposed Solution
-Find Your Home is an online rental marketplace connecting:
-Renters/Tenants
-House Owners/Landlords
-The system enables property searching, detailed viewing, authentication, booking, and interaction, streamlining the rental process and reducing reliance on brokers.
+# Software Requirements Specifications (SRS)
+# Find Your Home – Accommodation Marketplace
 
-2. Scope of the Project
-2.1 Initial Scope
-Service Areas:
-Sylhet City
-Dhaka City
-Accommodation Types:
-Apartments
-Rooms
-Houses
-Shared accommodation
-2.2 Future Scope
-Nationwide expansion
-Mobile app (React Native / Flutter)
-AI recommendations and smart filters
-Integrated payment system
-
-3. System Overview
-Roles in the system:
-Tenant
-House Owner
-Admin
-Functionalities include account creation, property listing, search with filters, booking management, and admin verification.
-4. Functional Requirements
-4.1 Tenant Features
-Register and login (email/password)
-Profile management
-Search rental listings: city, area, price, property type, amenities
-View listing details: photos, price, facilities, host details
-Booking system: date selection, availability check, wishlist/favorites
-Booking history
-4.2 House Owner Features
-Owner registration & login
-Create and manage property listings: title, description, images, price, availability
-View booking requests: confirm/decline bookings
-4.3 Admin Features
-Admin authentication
-Approve/verify listings
-User management: suspend/remove suspicious accounts
-Monitor site activity and analytics
-
-5. Non‑Functional Requirements
-User‑Friendly UI
-Secure Authentication (JWT or session-based; password hashing; optional OAuth)
-Fast Search Performance
-Responsive Design
-Data Protection
-Scalability
-Cross‑Browser Compatibility
-
-6. Technologies Used
-6.1 Frontend
-React.js / Next.js
-Tailwind CSS / UI library
-React Router
-Axios for API calls
-6.2 Backend
-Node.js
-Express.js
-REST API
-6.3 Database
-MongoDB (NoSQL)
-6.4 Authentication
-JWT / OAuth (optional Google Auth)
-
-7. Dataset Description
-Property listings: location, price, rooms, amenities, images
-User data: profile, login info (no NID/passport data)
-Booking data: dates, tenant ID, property ID
-8. System Workflow
-User registers or logs in.
-Tenant searches property listings.
-Tenant filters and selects a property.
-Tenant views property details.
-Tenant requests a booking (date selection).
-Owner reviews and confirms booking.
-Booking details are stored.
-Tenant visits property physically and completes verification.
-
-9. Application Architecture
-Frontend: React or Next.js with modern UI components
-Backend: REST APIs with Express
-Database: MongoDB
-Authentication: JWT sessions
-
-10. Limitations
-No integrated online payments initially
-No digital storage of NID/passport
-Limited initial service area
-11. Revenue Model
-11.1 Revenue Generation
-Revenue will be generated through multiple channels:
-Booking Commission:
-A fixed percentage (e.g., 5–10%) of each confirmed booking fee from the property owner.
-Example: If a rent is BDT 10,000/month and commission is 5%, we earn BDT 500.
-Featured Listings / Premium Services:
-Owners can pay extra to highlight their property, appear on top of searches, or access analytics.
-Advertisements:
-Local businesses or services (furniture, moving, home services) can advertise on the platform.
-Subscription Model (Optional Future):
-Tenants or owners can subscribe for premium features (AI recommendations, unlimited listings).
-11.2 Revenue Collection
-Payments will be collected through trusted online gateways (bKash, Nagad, Rocket, SSLCommerz, Stripe).
-Property owners or tenants pay commissions and fees via the platform.
-Payment gateways process transactions securely and provide confirmation receipts.
-11.3 Revenue Flow
-User makes payment → via online gateway integrated into the platform.
-Payment gateway deducts service charges → sends net amount to our platform account.
-Platform records revenue → admin panel tracks earnings per booking/listing.
-Owner/Tenant payments handled → commission retained by platform; balance goes to owners if applicable.
-Expected Revenue:
-Assuming 1,000 listings per city and 5% commission on average BDT 10,000 rent/month:
-Revenue per month per city = 1,000 × 10,000 × 5% = BDT 500,000
-With expansion to 10 cities, potential monthly revenue = BDT 5,000,000
-Additional revenue from featured listings & ads could add BDT 200,000–500,000/month initially.
-Note: Revenue is scalable with user base growth, number of listings, and future monetization services.
-
-12. Conclusion
-Find Your Home is a web application designed to modernize rental housing search in Bangladesh. It delivers authenticated user workflows for tenants and owners, scalable design, and usable interfaces for property browsing and bookings. The platform is prepared for future enhancements like mobile apps, AI-based recommendations, and monetization strategies. The revenue model ensures sustainable business growth while providing a trusted rental ecosystem.
-13. Reference
-YouTube Playlist: Airbnb Clone Fullstack Tutorial
-GitHub Source full stack Code: GitHub Repository
+![Project Status](https://img.shields.io/badge/status-Planning-yellow)
+![React](https://img.shields.io/badge/React-17.0.2-blue)
+![Node.js](https://img.shields.io/badge/Node.js-18.16.0-green)
+![Express.js](https://img.shields.io/badge/Express.js-4.18.2-lightgrey)
+![MongoDB](https://img.shields.io/badge/MongoDB-6.0.7-brightgreen)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 
 
+## 1. Introduction
+
+### 1.1 Purpose
+The purpose of this document is to define the software requirements for **Find Your Home**, a rental accommodation platform designed to help people easily find rental homes in major cities of Bangladesh, starting with Sylhet and Dhaka.  
+
+This SRS describes the system’s functionality, scope, constraints, and overall workflow to guide development and evaluation.
+
+### 1.2 Problem Statement
+In cities like Sylhet, many people come from villages or other districts for education, jobs, or medical purposes. Most of them face difficulties such as:
+
+- Not knowing where to find rental houses
+- Lack of trusted information
+- Dependence on brokers
+- Time-consuming physical searching
+
+Unlike foreign countries where platforms like Airbnb are widely used, Bangladesh lacks a localized rental platform suitable for local users.
+
+### 1.3 Proposed Solution
+**Find Your Home** is a software platform that connects:
+
+- **House owners** who want to rent their properties  
+- **Tenants** who are looking for accommodation
+
+The system provides verified listings, location-based search, and clear rental information to simplify the renting process.
+
+
+## 2. Scope of the Project
+
+### 2.1 Initial Scope
+- Service available in:
+  - **Sylhet City**
+  - **Dhaka City**
+- Rental types:
+  - Apartments
+  - Rooms
+  - Family houses
+  - Shared accommodations
+
+### 2.2 Future Scope
+- Expansion to **all major cities in Bangladesh**  
+- Mobile application version  
+- AI-based recommendation system  
+- Price prediction and demand analysis
+
+## 3. System Overview
+**Find Your Home** works as an online rental marketplace similar to Airbnb but customized for Bangladesh.  
+
+**Users:**
+1. Tenants  
+2. House Owners  
+3. Admin
+
+## 4. Functional Requirements
+
+### 4.1 Tenant Features
+- User registration and login  
+- Search houses by:
+  - City
+  - Area
+  - Rent range
+  - Number of rooms  
+- View house details:
+  - Images
+  - Rent
+  - Location
+  - Facilities  
+- Request booking / contact owner  
+- View rental rules and requirements  
+
+> **Important:** Tenants must show valid NID or Passport physically at the time of house entry. The system does not store NID or passport data.
+
+### 4.2 House Owner Features
+- Register and login  
+- Post house listings  
+- Upload house details and photos  
+- Set rent and availability  
+- Accept or reject tenant requests
+
+### 4.3 Admin Features
+- Verify house listings  
+- Manage users  
+- Remove fake or duplicate listings  
+- Monitor system activity
+
+## 5. Non-Functional Requirements
+- User-friendly interface  
+- Secure authentication system  
+- Fast search performance  
+- Responsive design (mobile & desktop)  
+- Data privacy protection
+
+## 6. Technologies Used
+
+### 6.1 Frontend
+- HTML  
+- CSS  
+- JavaScript  
+- React.js (optional)
+
+### 6.2 Backend
+- Node.js  
+- Express.js
+
+### 6.3 Database
+- MongoDB
+
+### 6.4 AI / Machine Learning (Optional / Future)
+- Recommendation System based on user preferences  
+- Algorithms:
+  - KNN (for similarity-based suggestions)
+  - Linear Regression (rent trend analysis)
+
+## 7. Dataset Description
+
+**Dataset Type:**
+- Rental house data including:
+  - Location
+  - Rent
+  - Number of rooms
+  - Facilities
+
+**Dataset Source:**
+- Manually collected data  
+- Sample datasets from platforms like **Kaggle**  
+- Real listings (for demo purposes)
+
+
+## 8. System Workflow
+1. User registers on the platform  
+2. Tenant searches for a house  
+3. Tenant views details and sends request  
+4. House owner reviews the request  
+5. Booking is confirmed  
+6. Tenant physically visits the house  
+7. Tenant provides NID/Passport for offline verification  
+8. Final agreement is completed
+
+
+## 9. Application Type
+- Web Application  
+- Stack: **MERN** (MongoDB, Express, React, Node)  
+- Can be extended to mobile apps in future
+
+
+## 10. Limitations
+- No online payment system (initial phase)  
+- No digital storage of NID/passport  
+- Limited to two cities initially
+
+
+## 11. Revenue Model
+
+The website owner earns revenue by monetizing the marketplace platform connecting **house owners** and **tenants**.
+
+### 11.1 Commission on Bookings
+- Deduct a percentage of rent for every booking.
+
+| Rent (BDT/month) | Commission % | Platform Earnings (BDT) |
+|-----------------|--------------|-------------------------|
+| 10,000          | 5%           | 500                     |
+| 15,000          | 5%           | 750                     |
+
+- **Workflow:**  
+  1. Tenant books a property through the platform  
+  2. Platform deducts commission automatically  
+  3. Remaining rent is sent to house owner  
+  4. Commission goes to website owner
+
+### 11.2 Featured Listings / Premium Placement
+- House owners pay extra to highlight listings or appear at the top of search results  
+- Example: BDT 200–500 per listing per month
+
+### 11.3 Subscription Model (Optional / Future)
+- House owners or tenants can subscribe to premium services:
+  - House Owner: unlimited listings, analytics dashboard  
+  - Tenant: AI recommendations, early booking alerts
+
+### 11.4 Advertisements
+- Local businesses (furniture, movers, cleaners) can advertise on the platform  
+- Example: BDT 500–1,000 per ad per month
+
+### 11.5 Optional Add-ons
+- Booking protection / security deposit handling  
+- Cancellation fees  
+- Premium support services
+
+### 11.6 Revenue Flow
+1. Tenant books a property → payment goes through platform → commission deducted → balance sent to house owner  
+2. House owners pay extra for featured listings → revenue collected directly  
+3. Subscriptions and ads provide additional income  
+4. Payments are processed via trusted gateways (bKash, Nagad, Rocket, SSLCommerz, Stripe)
+
+**Expected Revenue Example:**  
+- 1,000 listings in a city × 5% commission × average rent BDT 10,000 = BDT 500,000/month  
+- Expansion to 10 cities → potential monthly revenue = BDT 5,000,000  
+- Additional revenue from featured listings & ads = BDT 200,000–500,000/month
+
+## 12. Conclusion
+**Find Your Home** aims to modernize the rental process in Bangladesh by providing a reliable, easy-to-use platform for tenants and house owners.  
+Starting with Sylhet and Dhaka, the system will expand nationwide after successful adoption.
+
+## 13. References: 
+- [YouTube Playlist: Airbnb Clone Fullstack Tutorial](https://www.youtube.com/playlist?list=PLnE5DGXxG1AqX7BdIt_3_9RVXdDiMTAGl)  
+- [GitHub Repository: Full Stack Code](https://github.com/PardeepBhasin/airbnb-clone)
